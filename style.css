@@ -26,6 +26,8 @@
 
 body {
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
+  transition: all 0.4s;
 }
 
 body * {
@@ -34,7 +36,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 480px;
   margin: 56px auto 0px;
   padding: 0 24px;
 }
@@ -149,9 +152,20 @@ ul li a:hover {
   padding: 16px;
 }
 
-/* footer */
+/* Footer */
 footer {
   text-align: center;
   padding: 24px;
   font-size: 14px;
+}
+
+/* Media Queries */
+
+@media (min-width: 640px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
 }
