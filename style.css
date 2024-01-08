@@ -61,6 +61,7 @@ body * {
 }
 
 /* switch */
+
 #switch {
   width: 64px;
   position: relative;
@@ -79,6 +80,16 @@ body * {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
+  animation: switch-off 0.2s;
+  transition: all 0.2s;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+
+.light #switch button {
+  animation: switch-on 0.2s forwards;
 }
 
 #switch span {
@@ -90,11 +101,6 @@ body * {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 9999px;
-}
-
-.light #switch button {
-  left: initial;
-  right: 0;
 }
 
 /* Links */
@@ -123,7 +129,7 @@ ul li a {
 
 ul li a:hover {
   background: var(--surface-color-hover);
-  border: 1.5px solid var(--stroke-color);
+  border: 1px solid var(--stroke-color);
 }
 
 /* social links */
@@ -167,5 +173,25 @@ footer {
   }
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* Animações */
+
+@keyframes switch-on {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes switch-off {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
